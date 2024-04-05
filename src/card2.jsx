@@ -22,11 +22,11 @@ const Card2 = () => {
       </span>
     </a>
     <a href="https://threads.net/100daysofnextjs" class="text-xs font-medium px-4 py-2.5 rounded-full hover:opacity-100 hover:shadow-sm border border-[#127CE5] text-[#127CE5] text-white flex gap-1">
-      <span class="flex items-center space-x-2 rounded-md group hover:rounded-full transition hover:text-[#127CE5]">
+      <span class="flex items-center space-x-2 rounded-md group hover:rounded-full  transition hover:text-[#127CE5]">
         <svg fill="#127CE5" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
           <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.326 18.266l-4.326-2.314-4.326 2.313.863-4.829-3.537-3.399 4.86-.671 2.14-4.415 2.14 4.415 4.86.671-3.537 3.4.863 4.829z"/>
         </svg>
-        <span>se connecter</span>
+        <span className='text-blue-500'>se connecter</span>
       </span>
     </a>
   </div>
