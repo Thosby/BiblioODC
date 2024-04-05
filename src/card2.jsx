@@ -106,7 +106,7 @@ const Card2 = () => {
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
 
                   <div class="bg-white rounded-lg border p-4">
-                    <img src="img.jpeg" alt="Placeholder Image" class="w-full h-48 rounded-md object-cover"/>
+                    <img src="img6.jpeg" alt="Placeholder Image" class="w-full h-48 rounded-md object-cover"/>
                     <div class="px-1 py-4">
                       <div class="font-bold text-xl mb-2">Blog Title</div>
                       <p class="text-gray-700 text-base">
