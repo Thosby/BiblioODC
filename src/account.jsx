@@ -7,7 +7,8 @@ const Account = () => {
   
   <div class="hidden lg:flex items-center justify-center flex-1 bg-white text-black">
     <div class="max-w-md text-center">
-      <svg xmlns="http://www.w3.org/2000/svg" width="524.67004" height="531.39694" class="w-full" alt="https://undraw.co/illustrations" title="https://undraw.co/illustrations" viewBox="0 0 524.67004 531.39694" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <img src="livre.jpg" alt="" />
+      {/* <svg xmlns="http://www.w3.org/2000/svg" width="524.67004" height="531.39694" class="w-full" alt="https://undraw.co/illustrations" title="https://undraw.co/illustrations" viewBox="0 0 524.67004 531.39694" xmlns:xlink="http://www.w3.org/1999/xlink">
         <polygon points="117.67523 88.74385 113.67523 109.74385 133.61763 115.36589 131.1398 92.94604 117.67523 88.74385" fill="#a0616a" />
         <path d="M0,523.44458c0,.66003,.53003,1.19,1.19006,1.19H523.48004c.65997,0,1.19-.52997,1.19-1.19,0-.65997-.53003-1.19-1.19-1.19H1.19006c-.66003,0-1.19006,.53003-1.19006,1.19Z" fill="#3f3d56" />
         <g>
@@ -74,13 +75,13 @@ const Account = () => {
           <path d="M332.1727,91.20873v3.47462h-103.78322c-.47775,0-.91208-.19113-1.22478-.51253-.32146-.3127-.51253-.74703-.51253-1.22478,0-.95555,.78181-1.73731,1.7373-1.73731h103.78322Z" fill="#000000" />
           <path d="M421.20978,84.69383h-17.37308c-1.91589,0-3.47461-1.55832-3.47461-3.47462s1.55875-3.47462,3.47461-3.47462h17.37308c1.91589,0,3.47461,1.55832,3.47461,3.47462s-1.55875,3.47462-3.47461,3.47462Z" fill="#e6e6e6" />
         </g>
-      </svg>
+      </svg> */}
     </div>
   </div>
   <div class="w-full bg-gray-100 lg:w-1/2 flex items-center justify-center">
     <div class="max-w-md w-full p-6">
-      <h1 class="text-3xl font-semibold mb-6 text-black text-center">Sign Up</h1>
-      <h1 class="text-sm font-semibold mb-6 text-gray-500 text-center">Join to Our Community with all time access and free </h1>
+      <h1 class="text-3xl font-semibold mb-6 text-black text-center">Inscription</h1>
+      <h1 class="text-sm font-semibold mb-6 text-gray-500 text-center">Rejoignez notre communauté avec un accès permanent et gratuit</h1>
       <div class="mt-4 flex flex-col lg:flex-row items-center justify-between">
         <div class="w-full lg:w-1/2 mb-2 lg:mb-0">
           <button type="button" class="w-full flex justify-center items-center gap-2 bg-white text-sm text-gray-600 p-2 rounded-md hover:bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 transition-colors duration-300">
@@ -104,7 +105,7 @@ const Account = () => {
       <form action="#" method="POST" class="space-y-4">
       
         <div>
-          <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+          <label for="username" class="block text-sm font-medium text-gray-700">Nom d'utilisateur </label>
           <input type="text" id="username" name="username" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
         </div>
         <div>
@@ -112,15 +113,15 @@ const Account = () => {
           <input type="text" id="email" name="email" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
         </div>
         <div>
-          <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+          <label for="password" class="block text-sm font-medium text-gray-700">Mot de passe</label>
           <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
         </div>
         <div>
-          <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Sign Up</button>
+          <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Sign Up</button>
         </div>
       </form>
       <div class="mt-4 text-sm text-gray-600 text-center">
-        <p>Already have an account? <a href="#" class="text-black hover:underline">Login here</a>
+        <p>Vous avez déjà un compte?<a href="#" class="text-black hover:underline">Connectez-vous ici</a>
         </p>
       </div>
     </div>
