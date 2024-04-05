@@ -6,7 +6,7 @@ import { BrowserRouter,Route,Routes } from 'react-router-dom'
 import { db } from './firebaseconfig'
 import { collection, doc, addDoc, getDocs, deleteDoc, updateDoc } from 'firebase/firestore'
 import Card from './Card/card'
-import Card2 from './card2.jsx'
+import Card2 from './../src/card2.jsx';
 import Button from './Button'
 import Account from './account'
 import {
