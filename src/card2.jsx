@@ -103,7 +103,8 @@ const Card2 = () => {
             </button>
           </div>
               <div class="container mx-auto mx-auto p-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 
+                md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
 
                   <div class="bg-white rounded-lg border p-4">
                     <img src="img6.jpeg" alt="Placeholder Image" class="w-full h-48 rounded-md object-cover"/>
