@@ -2,11 +2,13 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 // import './App.css'
+import { BrowserRouter,Route,Routes } from 'react-router-dom'
 import { db } from './firebaseconfig'
 import { collection, doc, addDoc, getDocs, deleteDoc, updateDoc } from 'firebase/firestore'
 import Card from './Card/card'
 import Card2 from './card2.jsx'
 import Button from './Button'
+import Account from './account'
 function App() {
   const [nom, setNom] = useState("")
   const [prenom, setprenom] = useState("")
@@ -42,6 +44,11 @@ const handlechangen= (e) => {
 
   return (
     <>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/connexion' element={<Account/>}></Route>
+    </Routes>
+    </BrowserRouter>
 
 <Card2/>
 
