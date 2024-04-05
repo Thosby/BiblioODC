@@ -9,6 +9,10 @@ import Card from './Card/card'
 import Card2 from './card2.jsx'
 import Button from './Button'
 import Account from './account'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 function App() {
   const [nom, setNom] = useState("")
   const [prenom, setprenom] = useState("")
@@ -17,6 +21,18 @@ function App() {
   //creation de la reference de la base de données
   const dbref = collection(db, "user")
   //ajout de la donnée
+
+  const router = createBrowserRouter([
+    {
+      path: "/connexion",
+      element: <Account/>
+    },
+    {
+      path: "/",
+      element: <Card2/>
+    },
+  ]);
+
   const add = async (e) => {
     e.preventDefault()
     const addData = await addDoc(dbref, { Nom: nom ,Prenom:prenom,Age:age,Natinalité:nat})
@@ -44,8 +60,8 @@ const handlechangen= (e) => {
 
   return (
     <>
+    <RouterProvider router={router} ><Card2/></RouterProvider>
 
-<Card2/>
 
       {/* <form>
         <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57" />
