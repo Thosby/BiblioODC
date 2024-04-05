@@ -44,11 +44,6 @@ const handlechangen= (e) => {
 
   return (
     <>
-    <BrowserRouter>
-    <Routes>
-      <Route path='/connexion' element={<Account/>}></Route>
-    </Routes>
-    </BrowserRouter>
 
 <Card2/>
 
