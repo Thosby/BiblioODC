@@ -11,6 +11,7 @@ import {
 import { auth } from "./../src/firebaseconfig";
 const Login = () => {
   const inputs = useRef([]);
+  const [currentuser, setCurrentuser] = useState("");
   const [validation, setValidation] = useState("");
   const addinputs = (el) => {
     if (el && !inputs.current.includes(el)) {
@@ -27,7 +28,7 @@ const Login = () => {
     //   setValidation("Au moins 6 caracteres");
     //   return;
     // }
-    if (inputs.current[2].value !== inputs.current[3].value) {
+    if (inputs.current[1].value !== inputs.current[2].value) {
       setValidation("les deux doivent être les mêmes ");
       console.log("b");
       return;
@@ -36,13 +37,19 @@ const Login = () => {
     console.log(signup);
     try {
       const cred = await signup(
-        inputs.current[1].value,
-        inputs.current[2].value
+        inputs.current[0].value,
+        inputs.current[1].value
       );
       formRef.current.reset();
       console.log(cred);
     } catch (err) {
-      console.log(error)
+      console.log(err);
+      if (err.code === "auth/invalid-email") {
+        setValidation("format d'email non valide !");
+      }
+      if (err.code === "auth/email-already-in-use") {
+        setValidation("cet utilisateur existe déjà !");
+      }
     }
   };
   return (
@@ -193,7 +200,7 @@ const Login = () => {
                   type="submit"
                   class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300"
                 >
-             Inscription
+                  Inscription
                 </button>
               </div>
             </form>
@@ -204,7 +211,7 @@ const Login = () => {
                   to="/connexion"
                   class="text-purple-blue-500 hover:underline mb-10"
                 >
-                  Connectez-vous ici
+                 &nbsp; Connectez-vous ici
                 </Link>
               </p>
             </div>
