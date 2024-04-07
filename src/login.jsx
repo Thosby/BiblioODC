@@ -123,7 +123,7 @@ const Login = () => {
               <p>ou avec email</p>
             </div>
             <form onSubmit={handleform} class="space-y-4" ref={formRef}>
-              <div>
+              {/* <div>
                 <label
                   for="username"
                   class="block text-sm font-medium text-gray-700"
@@ -138,7 +138,7 @@ const Login = () => {
                   placeholder="username"
                   class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
                 />
-              </div>
+              </div> */}
               <div>
                 <label
                   for="email"
