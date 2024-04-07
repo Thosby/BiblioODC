@@ -89,8 +89,8 @@ const Head2 = () => {
                   </a>
                 </div>
               </div>
-            </div>
-            <div class="flex gap-2">
+            </div> 
+            <div class="flex gap-2 hidden sm:flex md:flex" >
               <a
                 href="https://threads.net/100daysofnextjs"
                 class="text-xs font-medium px-4 py-2.5 rounded-full hover:opacity-100 hover:shadow-sm bg-[#127CE5] text-white flex gap-1 "
@@ -173,8 +173,7 @@ const Head2 = () => {
                   </button>
                 </div>
 
-                       
-          {/* <div className="absolute  right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                {/* <div className="absolute  right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
             <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Profil</a>
             <a href="#" classNameName="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Paramtres</a>
             <a href="#" classNameName="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Déconnecter</a>

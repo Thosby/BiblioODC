@@ -2,13 +2,13 @@ import React from "react";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "./footer";
-import Head2 from "./Head2"; 
+import Head2 from "./Head2";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  onAuthStateChanged
+  onAuthStateChanged,
 } from "firebase/auth";
-import  {auth} from "./../src/firebaseconfig"
+import { auth } from "./../src/firebaseconfig";
 const Login = () => {
   const inputs = useRef([]);
   const [validation, setValidation] = useState("");
@@ -17,9 +17,11 @@ const Login = () => {
       inputs.current.push(el);
     }
   };
-// AUTHETIFICATION
-const signup =(email,password) =>createUserWithEmailAndPassword(auth,email,password)
-  const handleform = (e) => {
+  const formRef = useRef();
+  // AUTHETIFICATION
+  const signup = (email, password) =>
+    createUserWithEmailAndPassword(auth, email, password);
+  const handleform = async (e) => {
     e.preventDefault();
     // if (inputs.current[2].value.length || inputs.current[3].value.length < 6) {
     //   setValidation("Au moins 6 caracteres");
@@ -31,12 +33,17 @@ const signup =(email,password) =>createUserWithEmailAndPassword(auth,email,passw
       return;
     }
 
-   console.log(signup)
-   try{
-
-   }catch(err){
-    
-   }
+    console.log(signup);
+    try {
+      const cred = await signup(
+        inputs.current[1].value,
+        inputs.current[2].value
+      );
+      formRef.current.reset();
+      console.log(cred);
+    } catch (err) {
+      console.log(error)
+    }
   };
   return (
     <div>
@@ -115,7 +122,7 @@ const signup =(email,password) =>createUserWithEmailAndPassword(auth,email,passw
             <div class="mt-4 text-sm text-gray-600 text-center">
               <p>ou avec email</p>
             </div>
-            <form onSubmit={handleform} class="space-y-4">
+            <form onSubmit={handleform} class="space-y-4" ref={formRef}>
               <div>
                 <label
                   for="username"
@@ -186,7 +193,7 @@ const signup =(email,password) =>createUserWithEmailAndPassword(auth,email,passw
                   type="submit"
                   class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300"
                 >
-                  Connexion
+             Inscription
                 </button>
               </div>
             </form>
