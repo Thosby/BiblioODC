@@ -18,7 +18,7 @@ const Sign = () => {
   };
   const handleform = async (e) => {
     e.preventDefault();
-    console.log(inputs.current[1].value ,inputs.current[2].value,);
+    console.log(inputs.current[1].value, inputs.current[2].value);
     try {
       const cred = await signIn(
         inputs.current[1].value,
