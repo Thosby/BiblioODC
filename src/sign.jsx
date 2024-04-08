@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "./footer";
 import { signInWithEmailAndPassword } from "firebase/auth";
-
+import { auth } from "./../src/firebaseconfig";
 const Sign = () => {
   const inputs = useRef([]);
 
@@ -18,6 +18,7 @@ const Sign = () => {
   };
   const handleform = async (e) => {
     e.preventDefault();
+    console.log(inputs.current[1].value ,inputs.current[2].value,);
     try {
       const cred = await signIn(
         inputs.current[1].value,
