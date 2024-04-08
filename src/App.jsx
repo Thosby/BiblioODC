@@ -33,7 +33,10 @@ function App() {
       <Head2 connected={connected} onligne={onligne} decon={signUserOut} />
       <Routes>
         <Route path="/" element={<Card2 />} /> {/* Route pour Card2 */}
-        <Route path="/connexion" element={<Sign />} />{" "}
+        <Route
+          path="/connexion"
+          element={<Sign setConnect={setConnect} />}
+        />{" "}
         <Route
           path="/inscription"
           element={<Login setConnect={setConnect} />}
