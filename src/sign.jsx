@@ -1,29 +1,36 @@
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "./footer";
-import Head2 from "./Head2";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const Sign = () => {
   const inputs = useRef([]);
-  const [validation, setValidation]=useState("")
+
+  let navigate = useNavigate();
+  const [validation, setValidation] = useState("");
   const addinputs = (el) => {
     if (el && !inputs.current.includes(el)) {
       inputs.current.push(el);
     }
   };
-
-  const handleform = (e) => {
+  const signIn = (email, password) => {
+    signInWithEmailAndPassword(auth, email, password);
+  };
+  const handleform = async (e) => {
     e.preventDefault();
-    if (inputs.current[0].value.length || inputs.current[2].value.length < 6) {
-      console.log("moins 6 caracteres");
-      setValidation("Au moins 6 caracteres");
-      return
+    try {
+      const cred = await signIn(
+        inputs.current[1].value,
+        inputs.current[2].value
+      );
+      setValidation("");
+      navigate("/");
+    } catch {
+      setValidation("Email ou mot de passe incorrecte");
     }
-    console.log(inputs);
   };
   return (
     <div>
-      <Head2/>
       <div class="flex h-screen">
         <div class="hidden lg:flex items-center justify-center flex-1 bg-white text-black">
           <div class="max-w-md text-center">
@@ -157,7 +164,7 @@ const Sign = () => {
                 </button>
               </div>
             </form>
-            <div class="mt-4 text-sm text-gray-600 text-center">
+            <div class="mt-4 text-sm text-gray-600 text-center mb-5">
               <p>
                 Vous n'avez pas un compte?
                 <Link
@@ -173,8 +180,7 @@ const Sign = () => {
         </div>
       </div>
 
-
-      <Footer/>
+      <Footer />
     </div>
   );
 };

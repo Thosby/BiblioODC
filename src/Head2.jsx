@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // import img from "./logot.png";
-const Head2 = () => {
+const Head2 = ({ connected, onligne, decon }) => {
   return (
     <div>
       <nav className="bg-gray-800 ">
@@ -90,96 +90,133 @@ const Head2 = () => {
                 </div>
               </div>
             </div>
-            <div class="flex gap-2 ">
-              <a
-                href="https://threads.net/100daysofnextjs"
-                class="text-xs font-medium px-4 py-2.5 rounded-full hover:opacity-100 hover:shadow-sm bg-[#127CE5] text-white flex gap-1 "
-              >
-                <span class="flex items-center space-x-2 rounded-md group hover:rounded-full transition hover:text-neutral-50/75">
-                  <svg
-                    fill="white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.326 18.266l-4.326-2.314-4.326 2.313.863-4.829-3.537-3.399 4.86-.671 2.14-4.415 2.14 4.415 4.86.671-3.537 3.4.863 4.829z" />
-                  </svg>
-                  <span>
-                    <Link to="/inscription">S'inscire</Link>
-                  </span>
-                </span>
-              </a>
-              <a
-                href="https://threads.net/100daysofnextjs"
-                class="text-xs font-medium px-4 py-2.5 rounded-full hidden sm:flex hover:opacity-100 hover:shadow-sm border border-[#127CE5] text-[#127CE5] text-white flex gap-1"
-              >
-                <span class="flex items-center space-x-2 rounded-md group hover:rounded-full  transition hover:text-[#127CE5]">
-                  <svg
-                    fill="#127CE5"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.326 18.266l-4.326-2.314-4.326 2.313.863-4.829-3.537-3.399 4.86-.671 2.14-4.415 2.14 4.415 4.86.671-3.537 3.4.863 4.829z" />
-                  </svg>
-                  <span className="text-blue-500 ">
-                    {" "}
-                    <Link to="/connexion">Se connecter</Link>
-                  </span>
-                </span>
-              </a>
-            </div>
-            <div className="absolute hidden inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 xs:hidden">
-              <button
-                type="button"
-                className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-              >
-                <span className="absolute -inset-1.5"></span>
-                <span className="sr-only">View notifications</span>
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
+            {!onligne && (
+              <div class="flex gap-2 ">
+                <a
+                  href="https://threads.net/100daysofnextjs"
+                  class="text-xs font-medium px-4 py-2.5 rounded-full hover:opacity-100 hover:shadow-sm bg-[#127CE5] text-white flex gap-1 "
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-                  />
-                </svg>
-              </button>
-
-              <div className="relative ml-3">
-                <div>
+                  <span class="flex items-center space-x-2 rounded-md group hover:rounded-full transition hover:text-neutral-50/75">
+                    <svg
+                      fill="white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.326 18.266l-4.326-2.314-4.326 2.313.863-4.829-3.537-3.399 4.86-.671 2.14-4.415 2.14 4.415 4.86.671-3.537 3.4.863 4.829z" />
+                    </svg>
+                    <span>
+                      <Link to="/inscription">S'inscire</Link>
+                    </span>
+                  </span>
+                </a>
+                <a
+                  href="https://threads.net/100daysofnextjs"
+                  class="text-xs font-medium px-4 py-2.5 rounded-full hidden sm:flex hover:opacity-100 hover:shadow-sm border border-[#127CE5] text-[#127CE5] text-white flex gap-1"
+                >
+                  <span class="flex items-center space-x-2 rounded-md group hover:rounded-full  transition hover:text-[#127CE5]">
+                    <svg
+                      fill="#127CE5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.326 18.266l-4.326-2.314-4.326 2.313.863-4.829-3.537-3.399 4.86-.671 2.14-4.415 2.14 4.415 4.86.671-3.537 3.4.863 4.829z" />
+                    </svg>
+                    <span className="text-blue-500 ">
+                      {" "}
+                      <Link to="/connexion">Se connecter</Link>
+                    </span>
+                  </span>
+                </a>
+              </div>
+            )}
+            {connected ||
+              (onligne && (
+                <div className="absolute  inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 xs:hidden">
                   <button
                     type="button"
-                    className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                    id="user-menu-button"
-                    aria-expanded="false"
-                    aria-haspopup="true"
+                    className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                   >
                     <span className="absolute -inset-1.5"></span>
-                    <span className="sr-only">Open user menu</span>
-                    <img
-                      className="h-8 w-8 rounded-full"
-                      src="./profil.png"
-                      alt=""
-                    />
+                    <span className="sr-only">View notifications</span>
+                    <svg
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+                      />
+                    </svg>
                   </button>
-                </div>
 
-                {/* <div className="absolute  right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-            <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Profil</a>
-            <a href="#" classNameName="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Paramtres</a>
-            <a href="#" classNameName="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Déconnecter</a>
-          </div> */}
-              </div>
-            </div>
+                  <div className="relative ml-3">
+                    <div>
+                      <button
+                        type="button"
+                        className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                        id="user-menu-button"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                      >
+                        <span className="absolute -inset-1.5"></span>
+                        <span className="sr-only">Open user menu</span>
+                        <img
+                          className="h-8 w-8 rounded-full"
+                          src="./profil.png"
+                          alt=""
+                        />
+                      </button>
+                    </div>
+
+                    <div
+                      className="absolute  right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                      role="menu"
+                      aria-orientation="vertical"
+                      aria-labelledby="user-menu-button"
+                      tabindex="-1"
+                    >
+                      <a
+                        href="#"
+                        className="block px-4 py-2 text-sm text-gray-700"
+                        role="menuitem"
+                        tabindex="-1"
+                        id="user-menu-item-0"
+                      >
+                        Profil
+                      </a>
+                      <a
+                        href="#"
+                        classNameName="block px-4 py-2 text-sm text-gray-700"
+                        role="menuitem"
+                        tabindex="-1"
+                        id="user-menu-item-1"
+                      >
+                        Paramtres
+                      </a>
+                      <a
+                        href="#"
+                        classNameName="block px-4 py-2 text-sm text-gray-700"
+                        role="menuitem"
+                        tabindex="-1"
+                        id="user-menu-item-2"
+                        onClick={decon}
+                      >
+                        {" "}
+                        Déconnecter
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       </nav>

@@ -2,11 +2,11 @@ import React from "react";
 import { Link, createBrowserRouter } from "react-router-dom";
 import Head from "./Head";
 import Footer from "./footer";
-import Head2 from "./Head2";
-const Card2 = () => {
+
+const Card2 = ({connected}) => {
   return (
     <div class="bg-gradient-to-bl from-blue-50 to-violet-50  items-center justify-center lg:h-screen">
-    <Head2/>
+ 
       <div class="flex items-center justify-center mt-4 mb-5">
         <div class="flex rounded-full bg-[#0d1829] px-2 w-full max-w-[600px] drop-shadow-2xl">
           <button class="self-center flex p-1 cursor-pointer bg-[#0d1829]">

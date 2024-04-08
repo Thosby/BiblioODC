@@ -2,14 +2,17 @@ import React from "react";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "./footer";
-import Head2 from "./Head2";
+
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "./../src/firebaseconfig";
-const Login = () => {
+import { useNavigate } from "react-router-dom";
+// FONCTION MERE
+const Login = ({setConnect}) => {
+  let navigate = useNavigate();
   const inputs = useRef([]);
   const [currentuser, setCurrentuser] = useState("");
   const [validation, setValidation] = useState("");
@@ -42,6 +45,9 @@ const Login = () => {
       );
       formRef.current.reset();
       console.log(cred);
+      localStorage.setItem("isAuth", true);
+      setConnect(true);
+      navigate("/");
     } catch (err) {
       console.log(err);
       if (err.code === "auth/invalid-email") {
@@ -54,7 +60,6 @@ const Login = () => {
   };
   return (
     <div>
-      <Head2 />
       <div class="flex h-screen">
         <div class="hidden lg:flex items-center justify-center flex-1 bg-white text-black">
           <div class="max-w-md text-center">
@@ -211,7 +216,7 @@ const Login = () => {
                   to="/connexion"
                   class="text-purple-blue-500 hover:underline mb-10"
                 >
-                 &nbsp; Connectez-vous ici
+                  &nbsp; Connectez-vous ici
                 </Link>
               </p>
             </div>
