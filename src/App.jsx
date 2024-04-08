@@ -7,10 +7,10 @@ import Card from "./Card/card";
 import Card2 from "./../src/card2.jsx";
 import Sign from "./sign.jsx";
 import Login from "./login.jsx";
-import Head2 from "./Head2.jsx";
+
 import { useNavigate } from "react-router-dom";
 import { auth } from "./../src/firebaseconfig";
-
+import Example from "./Head3.jsx";
 function App() {
   const [connected, setConnect] = useState(false);
   const [onligne,setOnligne]=useState()
@@ -30,7 +30,8 @@ function App() {
   },[])
   return (
     <>
-      <Head2 connected={connected} onligne={onligne} decon={signUserOut} />
+      <Example connected={connected} onligne={onligne} decon={signUserOut} />
+
       <Routes>
         <Route path="/" element={<Card2 />} /> {/* Route pour Card2 */}
         <Route

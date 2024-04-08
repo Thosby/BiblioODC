@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import img from "./logot.png";
+
 const Head2 = ({ connected, onligne, decon }) => {
+
   return (
     <div>
+    
       <nav className="bg-gray-800 ">
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
@@ -165,6 +167,7 @@ const Head2 = ({ connected, onligne, decon }) => {
                       id="user-menu-button"
                       aria-expanded="false"
                       aria-haspopup="true"
+                      onClick={toggleMenu}
                     >
                       <span className="absolute -inset-1.5"></span>
                       <span className="sr-only">Open user menu</span>
@@ -175,43 +178,44 @@ const Head2 = ({ connected, onligne, decon }) => {
                       />
                     </button>
                   </div>
-
-                  <div
-                    className="absolute  right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                    role="menu"
-                    aria-orientation="vertical"
-                    aria-labelledby="user-menu-button"
-                    tabindex="-1"
-                  >
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700"
-                      role="menuitem"
+                  {menuOpen && (
+                    <div
+                      className="absolute  right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                      role="menu"
+                      aria-orientation="vertical"
+                      aria-labelledby="user-menu-button"
                       tabindex="-1"
-                      id="user-menu-item-0"
                     >
-                      {onligne.email.split("@")[0]}
-                    </a>
-                    <a
-                      href="#"
-                      classNameName="block px-10 text-sm text-gray-700 w-100"
-                      role="menuitem"
-                      tabindex="-1"
-                      id="user-menu-item-1"
-                    >
-                      Paramtres
-                    </a>
-                    <a
-                      href="#"
-                      classNameName="block text-sm text-gray-700"
-                      role="menuitem"
-                      tabindex="-1"
-                      id="user-menu-item-2"
-                      onClick={decon}
-                    >
-                      Déconnecter
-                    </a>
-                  </div>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 text-sm text-gray-700"
+                        role="menuitem"
+                        tabindex="-1"
+                        id="user-menu-item-0"
+                      >
+                        {onligne.email.split("@")[0]}
+                      </a>
+                      <a
+                        href="#"
+                        classNameName="block px-10 text-sm text-gray-700 w-100"
+                        role="menuitem"
+                        tabindex="-1"
+                        id="user-menu-item-1"
+                      >
+                        Paramtres
+                      </a>
+                      <a
+                        href="#"
+                        classNameName="block text-sm text-gray-700"
+                        role="menuitem"
+                        tabindex="-1"
+                        id="user-menu-item-2"
+                        onClick={decon}
+                      >
+                        Déconnecter
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             )}
