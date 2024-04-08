@@ -134,7 +134,7 @@ const Head2 = ({ connected, onligne, decon }) => {
               </div>
             )}
             {connected ||
-              onligne && (
+              (onligne && (
                 <div className="absolute  inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 xs:hidden">
                   <button
                     type="button"
@@ -191,7 +191,7 @@ const Head2 = ({ connected, onligne, decon }) => {
                         tabindex="-1"
                         id="user-menu-item-0"
                       >
-                        Profil
+                        {onligne.email.split("@")[0]}
                       </a>
                       <a
                         href="#"
@@ -216,7 +216,7 @@ const Head2 = ({ connected, onligne, decon }) => {
                     </div>
                   </div>
                 </div>
-              )}
+              ))}
           </div>
         </div>
       </nav>
