@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "./../src/firebaseconfig";
 import Example from "./Head3.jsx";
 function App() {
-  const [connected, setConnect] = useState(false);
+  const [connected, setConnect] = useState(localStorage.getItem("isAuth"));
   const [onligne,setOnligne]=useState()
   const signUserOut = async () => {
    await  signOut(auth).then(() => {

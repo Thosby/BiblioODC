@@ -112,7 +112,13 @@ export default function Example({ connected, onligne, decon }) {
                   >
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">View notifications</span>
-                    <BellIcon className="h-6 w-6" aria-hidden="true" />
+                    {/* <BellIcon className="h-6 w-6" aria-hidden="true" /> */}
+                    <img
+                      src="./plus.svg"
+                      alt=""
+                      className="h-8 w-8"
+                      aria-hidden="true"
+                    />
                   </button>
 
                   {/* Profile dropdown */}
@@ -122,7 +128,7 @@ export default function Example({ connected, onligne, decon }) {
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">Open user menu</span>
                         <img
-                          className="h-8 w-8 rounded-full"
+                          className="h-9 w-9 rounded-full"
                           src="./profil.png"
                           alt=""
                         />
@@ -172,7 +178,6 @@ export default function Example({ connected, onligne, decon }) {
                               className={classNames(
                                 active ? "bg-gray-100" : "",
                                 "block px-4 py-2 text-sm text-gray-700"
-                                
                               )}
                             >
                               Déconnecter
