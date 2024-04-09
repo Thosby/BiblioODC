@@ -49,9 +49,7 @@ function App() {
         {/* Route pour Sign */}
         {/* Ajoutez d'autres routes si nécessaire */}
       </Routes>
-
-
-    
+      {/* <Load/> */}
     </>
   );
 }
