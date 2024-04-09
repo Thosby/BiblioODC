@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "./../src/firebaseconfig";
 import Livres from "./Pages/NewBook/Livres.jsx";
 import Example from "./Head3.jsx";
+
 function App() {
   const [connected, setConnect] = useState(localStorage.getItem("isAuth"));
   const [onligne, setOnligne] = useState();
@@ -48,6 +49,9 @@ function App() {
         {/* Route pour Sign */}
         {/* Ajoutez d'autres routes si nécessaire */}
       </Routes>
+
+
+    
     </>
   );
 }
