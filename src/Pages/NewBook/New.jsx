@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from "./../../firebaseconfig";
 import { useNavigate } from "react-router-dom";
-function New({connected}) {
+import toast, { Toaster } from "react-hot-toast";
+function New({ connected }) {
+  
   const [titre, setTitre] = useState("");
   const [auteur, setauteur] = useState("");
   const [description, setdescription] = useState("");
@@ -19,7 +21,7 @@ function New({connected}) {
       auteur: { name: auth.currentUser.email, id: auth.currentUser.uid },
     });
     if (addData) {
-      alert("envoyer avec succès");
+         toast.success("Opération réussie !");
       window.location.reload();
       navigate("/");
     } else {
@@ -35,14 +37,15 @@ function New({connected}) {
   const handlechangeD = (e) => {
     setdescription(e.target.value);
   };
-//   useEffect(() => {
-//     if (!connected) {
-//       navigate("/connexion");
-//     }
-//   }, []);
+  //   useEffect(() => {
+  //     if (!connected) {
+  //       navigate("/connexion");
+  //     }
+  //   }, []);
   return (
     <div>
       <body className="bg-gradient-to-bl from-blue-50 to-violet-50">
+        <Toaster position="top-right" reverseOrder={false} />
         <div class="max-w-md mx-auto p-8 bg-gray-800 rounded-md shadow-md form-container mt-10">
           <h2 class="text-2xl font-semibold text-white mb-6">
             Ajouter un livre !

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { db, auth } from "./../../firebaseconfig";
-
+import toast, { Toaster } from "react-hot-toast";
 function Livres({ onligne }) {
   const [livres, setLivres] = useState([]);
   const dbref = collection(db, "Livres");
@@ -10,7 +10,12 @@ function Livres({ onligne }) {
       const data = await getDocs(dbref);
       setLivres(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
+    
+      <div>
+        <Toaster />
+      </div>;
     meslivres();
+
   }, []);
 
   const deletelivre = async (id) => {
