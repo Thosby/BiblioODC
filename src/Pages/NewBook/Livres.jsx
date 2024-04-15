@@ -2,10 +2,15 @@ import React, { useEffect, useState } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { db, auth } from "./../../firebaseconfig";
 import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from 'react-router-dom';
 import Footer from "../../footer";
 import ButtonFavoris from "./ButtonFavoris";
 import Load from "./load";
+
+
 function Livres({ onligne }) {
+
+  const navigate = useNavigate();
   const [livres, setLivres] = useState([]);
    const [loading,setLoading]=useState(true);
   const dbref = collection(db, "Livres");
@@ -13,7 +18,9 @@ function Livres({ onligne }) {
     const meslivres = async () => {
       const data = await getDocs(dbref);
       setLivres(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+     // console.log(livres)
       setLoading(false)
+     
     };
 
     <div>
@@ -21,6 +28,11 @@ function Livres({ onligne }) {
     </div>;
     meslivres();
   }, []);
+
+  const handleClickBooks = livres =>{
+    navigate('/Detail',{ state :livres})
+    //console.log(livres)
+  }
 
   const deletelivre = async (id) => {
     const dlivre = doc(dbref, id);
@@ -43,8 +55,8 @@ function Livres({ onligne }) {
             class="grid grid-cols-1 sm:grid-cols-2 
                 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4"
           >
-            {livres.map((livre) => (
-              <div>
+            {livres.map((livre,index) => (
+              <div key={index}>
                 <div class="bg-white rounded-lg border p-4">
                   <img
                     src={livre.downloadURL}
@@ -68,10 +80,8 @@ function Livres({ onligne }) {
                     </p>
                   </div>
                   <div class="px-1 py-1   flex justify-between items-center">
-                    <a href="#" class="text-blue-500 hover:underline">
-                      voir plus
-                    </a>
-
+                    <button class="text-blue-500 hover:underline" onClick = {()=>handleClickBooks(livre)}>voir plus</button>
+                 
                     {onligne && livre.auteur.id === auth.currentUser.uid && (
                       <button
                         onClick={() => {

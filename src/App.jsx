@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "./../src/firebaseconfig";
 import Livres from "./Pages/NewBook/Livres.jsx";
 import Example from "./Head3.jsx";
+import Details from './Pages/Details';
 
 function App() {
   const [connected, setConnect] = useState(localStorage.getItem("isAuth"));
@@ -26,7 +27,7 @@ function App() {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log(currentUser);
+      ///console.log(currentUser);
       setOnligne(currentUser);
     });
   }, []);
@@ -46,6 +47,7 @@ function App() {
         />{" "}
         <Route path="/newbook" element={<New connected={connected} />} />
         <Route path="/Livres" element={<Livres onligne={onligne} />} />
+        <Route path="/Detail" element={<Details/>} />
         {/* Route pour Sign */}
         {/* Ajoutez d'autres routes si nécessaire */}
       </Routes>
